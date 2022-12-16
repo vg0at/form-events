@@ -31,5 +31,13 @@ function generateContact(name, telephone, email, notes, relationship) {
   const li = contactTemplate(name, telephone, email, notes, relationship);
 
   const ul = document.querySelector("ul");
+  contactCount();
   ul.append(li);
+}
+
+function contactCount() {
+  const contactCountEl = document.querySelector("span.contact-count")
+  const contactList = document.querySelectorAll("li");
+  const count = contactList.length;
+  contactCountEl.textContent = `(${count} Contacts)`
 }
